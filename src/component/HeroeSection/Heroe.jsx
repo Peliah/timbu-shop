@@ -5,7 +5,7 @@ import arrow from "../../assets/images/right-arrow-white.png"
 
 const Heroe = () => {
     return (
-        <div className='w-full min-h-screen bg-secondary bg-gradient-to-r from-primary from-60% to-secondary to-40% flex flex-row items-center justify-between pr-28 pl-28'>
+        <div className='w-full min-h-screen bg-secondary bg-gradient-to-r from-primary from-60% to-secondary to-40% flex flex-row items-center justify-between px-36'>
             <div className='flex flex-col w-1/4 gap-10 text-secondary justify-end '>
                 <h1 className='font-Montserrat text-6xl font-bold'>
                     Furniture that speaks your personality
@@ -25,7 +25,7 @@ const Heroe = () => {
                     <div className='absolute h-full w-full top-[-16px] right-[-16px] bg-primary-opacity'></div>
                     <Carousel autoSlide={true}>
                         {slides.map((s) => (
-                            <img className='w-full top-2 left-[-8px] object-cover' src={s} />
+                            <img className='w-[550px] object-cover' src={s} />
                         ))}
                     </Carousel>
                 </div>

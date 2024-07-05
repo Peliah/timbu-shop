@@ -21,111 +21,127 @@ export const furniture = [
         "name": "Living Room Chair",
         "image": image1,
         "description": "Description of chair 1",
-        "categories": ["living room", "modern"]
+        "categories": ["living room", "modern"],
+        "price": 150
     },
     {
         "id": 2,
         "name": "Ergonomic Office Chair",
         "image": image2,
         "description": "Description of chair 2",
-        "categories": ["office", "ergonomic"]
+        "categories": ["office", "ergonomic"],
+        "price": 200
     },
     {
         "id": 3,
         "name": "Kitchen Chair",
         "image": image3,
         "description": "Description of chair 3",
-        "categories": ["kitchen"]
+        "categories": ["kitchen"],
+        "price": 80
     },
     {
         "id": 4,
         "name": "Lounge Chair",
         "image": image4,
         "description": "Description of chair 4",
-        "categories": ["lounge"]
+        "categories": ["lounge"],
+        "price": 120
     },
     {
         "id": 5,
         "name": "Modern Chair",
         "image": image5,
         "description": "Description of chair 5",
-        "categories": ["modern"]
+        "categories": ["modern"],
+        "price": 160
     },
     {
         "id": 6,
         "name": "Bedroom Chair",
         "image": image6,
         "description": "Description of chair 6",
-        "categories": ["bedroom"]
+        "categories": ["bedroom"],
+        "price": 140
     },
     {
         "id": 7,
         "name": "Office Chair",
         "image": image7,
         "description": "Description of chair 7",
-        "categories": ["office"]
+        "categories": ["office"],
+        "price": 180
     },
     {
         "id": 8,
         "name": "Kitchen Stool",
         "image": image8,
         "description": "Description of chair 8",
-        "categories": ["kitchen"]
+        "categories": ["kitchen"],
+        "price": 60
     },
     {
         "id": 9,
         "name": "Metal Kitchen Chair",
         "image": image9,
         "description": "Description of chair 9",
-        "categories": ["kitchen"]
+        "categories": ["kitchen"],
+        "price": 90
     },
     {
         "id": 10,
         "name": "Comfort Lounge Chair",
         "image": image10,
         "description": "Description of chair 10",
-        "categories": ["lounge"]
+        "categories": ["lounge"],
+        "price": 130
     },
     {
         "id": 11,
         "name": "Vintage Bedroom Chair",
         "image": image11,
         "description": "Description of chair 11",
-        "categories": ["bedroom"]
+        "categories": ["bedroom"],
+        "price": 110
     },
     {
         "id": 12,
         "name": "Living Room Recliner",
         "image": image12,
         "description": "Description of chair 12",
-        "categories": ["living room"]
+        "categories": ["living room"],
+        "price": 190
     },
     {
         "id": 13,
         "name": "Fabric Lounge Chair",
         "image": image13,
         "description": "Description of chair 13",
-        "categories": ["lounge"]
+        "categories": ["lounge"],
+        "price": 170
     },
     {
         "id": 14,
         "name": "Office Armchair",
         "image": image14,
         "description": "Description of chair 14",
-        "categories": ["office"]
+        "categories": ["office"],
+        "price": 210
     },
     {
         "id": 15,
         "name": "Living Room Sofa",
         "image": image15,
         "description": "Description of chair 15",
-        "categories": ["living room"]
+        "categories": ["living room"],
+        "price": 220
     },
     {
         "id": 16,
         "name": "Modern Lounge Chair",
         "image": image16,
         "description": "Description of chair 16",
-        "categories": ["modern"]
+        "categories": ["modern"],
+        "price": 180
     }
 ];

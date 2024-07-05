@@ -11,10 +11,11 @@ export default {
       'secondary': '#EEF9F1',
       'background': '#FFFFFF',
       'transparent': 'transparent',
-      'primary-opacity': '#4B9595'
+      'primary-opacity': '#4B9595',
+      'tetiary': '#E2B93B'
     },
     fontFamily: {
-      'Montserrat': ['Montserrat', 'sans-serif']
+      'Montserrat': ['Montserrat']
     }
   },
   plugins: [],

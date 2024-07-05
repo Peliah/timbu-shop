@@ -9,12 +9,12 @@ const Category = () => {
     );
 
     return (
-        <div className='w-full pt-20 bg-background font-Montserrat flex flex-col'>
+        <div className='w-full py-20 bg-background font-Montserrat flex flex-col'>
             <div className='pb-20'>
                 <h1 className='font-medium text-center text-2xl pb-8'>Category</h1>
                 <ul className='w-full flex items-center justify-center gap-6 flex-row'>
                     {categories.map((category, index) => (
-                        <li className='px-6 py-3 border rounded-full border-primary' key={index}>{category}</li>
+                        <li className='px-6 py-2 border rounded-full border-primary' key={index}>{category}</li>
                     ))}
                 </ul>
             </div>
@@ -25,6 +25,7 @@ const Category = () => {
                         image={item.image}
                         name={item.name}
                         description={item.description}
+                        price={item.price}
                     />
                 ))}
             </div>
