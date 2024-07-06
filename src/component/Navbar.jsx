@@ -1,5 +1,6 @@
 import { PersonIcon } from '@radix-ui/react-icons'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -9,10 +10,10 @@ const Navbar = () => {
             <div className='w-full flex flex-row items-center justify-between h-10 pl-32 pr-32 '>
                 <figcaption className='font-Montserrat text-3xl capitalize text-secondary'>Elegant Furnitures</figcaption>
                 <ul className=' flex flex-row gap-10'>
-                    <li>Home</li>
-                    <li>About Us</li>
+                    <li><Link to={'/'}>Home</Link></li>
+                    <li><Link>About Us</Link></li>
                     <li>Contact</li>
-                    <li>Cart</li>
+                    <li><Link to={'/cart'}>Cart</Link></li>
                 </ul>
                 <p><PersonIcon /></p>
             </div>

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './hooks/AuthContext/AuthProvider'
 import HomePage from './Pages/ShopPages/HomePage'
 import Navbar from './component/Navbar'
+import Cart from './Pages/ShopPages/Cart'
 
 const App = () => {
   return (
@@ -10,9 +11,8 @@ const App = () => {
       <AuthProvider>
         <Navbar />
         <Routes>
-          <Route path='/' element={<HomePage />}>
-            {/* <Route path/> */}
-          </Route>
+          <Route path='/' element={<HomePage />}/>
+            <Route path='/cart' element={<Cart/>}/>
         </Routes>
       </AuthProvider>
     </BrowserRouter>
