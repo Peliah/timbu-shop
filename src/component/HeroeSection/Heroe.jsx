@@ -4,10 +4,10 @@ import { slides } from '../../data/CarouseSlides'
 
 const Heroe = () => {
     return (
-        <div className='w-full min-h-screen bg-secondary bg-gradient-to-r from-primary from-50% to-secondary to-50% relative flex flex-row items-center justify-between pr-28 pl-28'>
+        <div className='w-full min-h-screen bg-secondary bg-gradient-to-r from-primary from-60% to-secondary to-40% flex flex-row items-center justify-between pr-28 pl-28'>
             {/* <div className='absolute w-1/2 bg-primary top-0 left-0 h-full z-0'></div> */}
             {/* <div className=' w-full z-10'> */}
-            <div className='flex flex-col w-1/4 gap-10 text-secondary'>
+            <div className='flex flex-col w-1/4 gap-10 text-secondary justify-end '>
                 <h1 className='font-Montserrat text-6xl font-bold'>
                     Furniture that speaks your personality
                 </h1>
@@ -18,12 +18,16 @@ const Heroe = () => {
                     Explore Now
                 </button>
             </div>
-            <div className='w-3/4 '>
-                <Carousel>
-                    {slides.map((s) => (
-                        <img className='absolute w-full h-full top-2 left-[-8px] object-cover' src={s} />
-                    ))}
-                </Carousel>
+            <div className='w-3/6  flex items-center justify-center'>
+                <div className='relative w-[550px]'>
+                    <div className='absolute h-full w-full top-[-16px] right-[-16px] bg-primary-opacity'></div>
+                    <Carousel>
+                        {slides.map((s) => (
+                            // <img className='absolute w-full h-full top-2 left-[-8px] object-cover' src={s} />
+                            <img className='w-full top-2 left-[-8px] object-cover' src={s} />
+                        ))}
+                    </Carousel>
+                </div>
             </div>
             {/* </div> */}
         </div>
