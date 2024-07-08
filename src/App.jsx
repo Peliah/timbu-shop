@@ -5,6 +5,7 @@ import HomePage from './Pages/ShopPages/HomePage'
 import Navbar from './component/Navbar'
 import Cart from './Pages/ShopPages/Cart'
 import { CartProvider } from './hooks/CartContext/CartProvider'
+import Checkout from './Pages/ShopPages/checkout/Checkout'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/checkout' element={<Checkout />} />
           </Routes>
         </CartProvider>
       </AuthProvider>

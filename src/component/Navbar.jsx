@@ -1,6 +1,7 @@
 import { PersonIcon } from '@radix-ui/react-icons'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import cartImg from '../assets/images/mynaui_cart.png'
 
 const Navbar = () => {
 
@@ -13,7 +14,7 @@ const Navbar = () => {
                     <li><Link to={'/'}>Home</Link></li>
                     <li><Link>About Us</Link></li>
                     <li>Contact</li>
-                    <li><Link to={'/cart'}>Cart</Link></li>
+                    <li><Link to={'/cart'}><img src={cartImg} /></Link></li>
                 </ul>
                 <p><PersonIcon /></p>
             </div>

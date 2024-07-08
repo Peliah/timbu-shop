@@ -12,7 +12,7 @@ const InputBox = ({ name, type, id, value, placeholder, icon }) => {
                 id={id}
                 value={value}
                 placeholder={placeholder}
-                className='border rounded-lg border-primary w-full h-10 '
+                className='border rounded-lg border-primary w-full py-3 '
 
             />
             {/* <span >
