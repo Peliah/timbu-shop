@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-
+import arrowleft from '../../assets/images/left-arrow.png'
+import arrowright from '../../assets/images/right-arrow.png'
 const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 3000 }) => {
     const [current, setCurrent] = useState(0);
 
@@ -30,11 +31,11 @@ const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 300
             </div>
             <div className='absolute top-[110%] right-1/2 left-0  flex justify-evenly items-center w-full'>
                 {/* <button onClick={prev}>prev</button> */}
-                <div onClick={prev} className='cursor-pointer'><img src='src/assets/images/left-arrow.png' /></div>
+                <div onClick={prev} className='cursor-pointer'><img src={arrowleft} /></div>
                 {slides.map((_, i) => (
                     <h2 key={i}>{i + 1}</h2>
                 ))}
-                <div onClick={next} className='cursor-pointer'><img src='src/assets/images/right-arrow.png' /></div>
+                <div onClick={next} className='cursor-pointer'><img src={arrowright} /></div>
                 {/* <button onClick={next}>next</button> */}
             </div>
         </div>

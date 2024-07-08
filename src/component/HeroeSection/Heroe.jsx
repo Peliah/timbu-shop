@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from './Carousel'
 import { slides } from '../../data/CarouseSlides'
+import arrow from "../../assets/images/right-arrow-white.png"
 
 const Heroe = () => {
     return (
@@ -14,7 +15,7 @@ const Heroe = () => {
                 </p>
                 <button className='bg-secondary w-fit flex px-6 py-3 font-Montserrat font-semibold text-xl text-primary rounded-xl gap-4 '>
                     Explore Now
-                    <div className='bg-primary rounded-lg px-3'><img src='src/assets/images/right-arrow-white.png' /></div>
+                    <div className='bg-primary rounded-lg px-3'><img src={arrow} /></div>
                 </button>
             </div>
 
