@@ -1,41 +1,16 @@
 import React from 'react'
 import { useCart } from '../../hooks/CartContext/CartProvider'
+import InputBox from '../../component/InputBox';
 
 const Cart = () => {
   const { cart } = useCart();
   return (
     <div className='min-h-screen pt-20 px-36 font-Montserrat'>
-      <div className=''>
-        <h2 className='font-semibold text-2xl'>
+      <div className='pb-20'>
+        <h2 className='font-semibold text-2xl pt-6'>
           My Shopping Cart
         </h2>
         <div>
-          {/* <table className="w-full border-collapse">
-            <thead>
-              <tr>
-                <th className="border py-2 px-4"></th>
-                <th className="border py-2 px-4">Description</th>
-                <th className="border py-2 px-4">Quantity</th>
-                <th className="border py-2 px-4">Price</th>
-                <th className="border py-2 px-4">Cancel</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cart.map((item, index) => (
-                <tr key={item.id}>
-                  <td className="border py-2 px-4">
-                    <img src={item.image} alt={item.name} className="h-16 w-16 object-cover" />
-                  </td>
-                  <td className="border py-2 px-4">{item.description}</td>
-                  <td className="border py-2 px-4">{item.quantity}</td>
-                  <td className="border py-2 px-4">${item.price}</td>
-                  <td className="border py-2 px-4">
-                    <button className="bg-red-500 text-white py-1 px-2 rounded">Cancel</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table> */}
           <table className="w-full border-separate text-left  border-spacing-y-6">
             <thead>
               <tr>
@@ -65,29 +40,35 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div>
-          <div>
-            <div>
-              <h4>Items</h4>
-              <p>{cart.length}</p>
+        <div className='pb-10 flex flex-col gap-6 w-full mt-10'>
+          <div className=' w-[55%] flex flex-row justify-between'>
+            <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+              <h4 className='font-normal text-base opacity-85'>Items</h4>
+              <p className='font-normal text-base'>{cart.length}</p>
             </div>
-            <div>
-              <h4>Discount</h4>
-              <p>{cart.length}</p>
+            <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+              <h4 className='font-normal text-base opacity-85'>Discount</h4>
+              <p className='font-normal text-base'>{cart.length}</p>
             </div>
-            <div>
-              <h4>Subtotal</h4>
-              <p>{cart.length}</p>
+            <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+              <h4 className='font-normal text-base opacity-85'>Subtotal</h4>
+              <p className='font-normal text-base'>{cart.length}</p>
             </div>
-            <div>
-              <h4>Total</h4>
-              <p>{cart.length}</p>
+            <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+              <h4 className='font-normal text-base opacity-85'>Total</h4>
+              <p className='font-normal text-base'>{cart.length}</p>
             </div>
           </div>
-          <div>
-            <div><label>If you have a promotion code, please enter it here</label></div>
-            <div>
-              <button>Checkout</button>
+          <div className='w-[55%] flex gap-8 pt-8 '>
+            <div className='w-full flex flex-col  gap-4 self-end'>
+              <label>If you have a promotion code, please enter it here</label>
+              <div className='flex w-full'>
+                <InputBox />
+                <button className='text-secondary bg-primary h-10 px-6 rounded-lg'>Apply Discount</button>
+              </div>
+            </div>
+            <div className='self-end flex gap-4'>
+              <button className='px-6 py-2 text-secondary bg-primary rounded-lg'>Checkout</button>
               <button>Checkout</button>
             </div>
           </div>
