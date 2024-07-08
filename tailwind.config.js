@@ -15,7 +15,7 @@ export default {
       'tetiary': '#E2B93B'
     },
     fontFamily: {
-      'Montserrat': ['Montserrat']
+      'Montserrat': ['Montserrat', 'montserrat']
     }
   },
   plugins: [],

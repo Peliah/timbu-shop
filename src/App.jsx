@@ -4,16 +4,19 @@ import { AuthProvider } from './hooks/AuthContext/AuthProvider'
 import HomePage from './Pages/ShopPages/HomePage'
 import Navbar from './component/Navbar'
 import Cart from './Pages/ShopPages/Cart'
+import { CartProvider } from './hooks/CartContext/CartProvider'
 
 const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<HomePage />}/>
-            <Route path='/cart' element={<Cart/>}/>
-        </Routes>
+        <CartProvider>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/cart' element={<Cart />} />
+          </Routes>
+        </CartProvider>
       </AuthProvider>
     </BrowserRouter>
   )
