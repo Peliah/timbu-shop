@@ -1,12 +1,16 @@
 import React from 'react'
 import Heroe from '../../component/HeroeSection/Heroe'
+import Category from '../../component/CategorySection/Category'
+import Footer from '../../component/Footer'
 
 const HomePage = () => {
     return (
         <>
             <Heroe />
-            <div className='pr-28 pl-28'>
+            <div className='px-28'>
+                <Category />
             </div>
+            <Footer />
         </>
     )
 }

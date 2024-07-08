@@ -5,8 +5,6 @@ import { slides } from '../../data/CarouseSlides'
 const Heroe = () => {
     return (
         <div className='w-full min-h-screen bg-secondary bg-gradient-to-r from-primary from-60% to-secondary to-40% flex flex-row items-center justify-between pr-28 pl-28'>
-            {/* <div className='absolute w-1/2 bg-primary top-0 left-0 h-full z-0'></div> */}
-            {/* <div className=' w-full z-10'> */}
             <div className='flex flex-col w-1/4 gap-10 text-secondary justify-end '>
                 <h1 className='font-Montserrat text-6xl font-bold'>
                     Furniture that speaks your personality
@@ -14,22 +12,23 @@ const Heroe = () => {
                 <p className='font-Montserrat font-normal text-2xl'>
                     Discover the embodiment of your unique style today
                 </p>
-                <button className='bg-secondary'>
+                <button className='bg-secondary w-fit flex px-6 py-3 font-Montserrat font-semibold text-xl text-primary rounded-xl gap-4 '>
                     Explore Now
+                    <div className='bg-primary rounded-lg px-3'><img src='src/assets/images/right-arrow-white.png' /></div>
                 </button>
             </div>
+
+
             <div className='w-3/6  flex items-center justify-center'>
                 <div className='relative w-[550px]'>
                     <div className='absolute h-full w-full top-[-16px] right-[-16px] bg-primary-opacity'></div>
-                    <Carousel>
+                    <Carousel autoSlide={true}>
                         {slides.map((s) => (
-                            // <img className='absolute w-full h-full top-2 left-[-8px] object-cover' src={s} />
                             <img className='w-full top-2 left-[-8px] object-cover' src={s} />
                         ))}
                     </Carousel>
                 </div>
             </div>
-            {/* </div> */}
         </div>
     )
 }
