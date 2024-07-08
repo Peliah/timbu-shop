@@ -1,8 +1,10 @@
+import image1 from '../assets/images/image-2.png'
+
 export const furniture = [
     {
         "id": 1,
         "name": "Living Room Chair",
-        "image": "src/assets/images/image-2.png",
+        "image": image1,
         "description": "Description of chair 1",
         "categories": ["living room", "modern"]
     },
