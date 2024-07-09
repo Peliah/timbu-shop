@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../../hooks/CartContext/CartProvider';
 import trolley from '../../assets/images/trolley.png'
+import Toast from '../Toastie';
 const CategoryItem = ({ id, image, name, description, price }) => {
+    const [showToast, setShowToast] = useState(false);
     const { addToCart } = useCart();
 
     const handleAddToCart = () => {
         addToCart({ id, image, name, description, price });
+        setShowToast(true);
+    };
+
+    const closeToast = () => {
+        setShowToast(false);
     };
 
     return (
-        <div className="rounded-md shadow-xl font-Montserrat flex flex-col hover:scale-105">
+        <div className="rounded-md shadow-xl font-Montserrat flex flex-col hover:scale-105 relative">
             <div className="w-full md:h-96 h-36 overflow-hidden rounded-md">
                 <img src={image} alt={name} className="w-full h-full object-cover " />
             </div>
@@ -28,6 +35,7 @@ const CategoryItem = ({ id, image, name, description, price }) => {
                 </button>
                 <button className="px-3 py-1 bg-primary text-secondary rounded-lg text-sm font-medium hover:scale-110">View</button>
             </div>
+            <Toast message="Item added to cart successfully." isVisible={showToast} onClose={closeToast} />
         </div>
     );
 };
