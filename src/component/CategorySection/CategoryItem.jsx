@@ -9,9 +9,9 @@ const CategoryItem = ({ id, image, name, description, price }) => {
     };
 
     return (
-        <div className="rounded-md shadow-xl font-Montserrat flex flex-col">
+        <div className="rounded-md shadow-xl font-Montserrat flex flex-col hover:scale-105">
             <div className="w-full md:h-96 h-36 overflow-hidden rounded-md">
-                <img src={image} alt={name} className="w-full h-full object-cover" />
+                <img src={image} alt={name} className="w-full h-full object-cover " />
             </div>
             <div className="px-4 pt-4">
                 <h2 className="md:text-lg text-base font-medium">{name}</h2>
