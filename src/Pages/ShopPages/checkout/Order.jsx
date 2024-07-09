@@ -3,7 +3,7 @@ import { useCart } from '../../../hooks/CartContext/CartProvider'
 import { CaretDownIcon } from '@radix-ui/react-icons';
 
 const Order = () => {
-    const { cart } = useCart();
+    const { cart, totalItems, totalPrice } = useCart();
     return (
         <div className='w-full'>
             <h2 className='font-semibold text-2xl py-6'>
@@ -33,15 +33,19 @@ const Order = () => {
                 <div className='w-[calc(100%-128px)] p-4 '>
                     <div className='flex justify-between items-start border-b pb-2 mb-4'>
                         <h2 className='text-lg font-medium'>Subtotal</h2>
-                        <h2 className='text-lg font-medium  text-primary'>{cart.length}</h2>
+                        <h2 className='text-lg font-medium  text-primary'>${totalPrice * 1000}</h2>
                     </div>
-                    <div className='flex justify-between items-start border-b pb-2 mb-4'>
-                        <h2 className='text-lg font-medium'>Subtotal</h2>
-                        <h2 className='text-lg font-medium text-primary'>{cart.length}</h2>
+                    <div className='flex justify-between items-start border-b pb-6 mb-4 opacity-55'>
+                        <div>
+                            <h2 className='text-lg font-medium'>Shipping</h2>
+                            <h2 className='text-base font-normal'>Express Shipping (3-5 business days)</h2>
+
+                        </div>
+                        <h2 className='text-lg font-medium text-primary'>${10}</h2>
                     </div>
                     <div className='flex justify-between items-start mt-4 py-2 mb-4'>
                         <h2 className='text-lg font-medium'>Subtotal</h2>
-                        <h2 className='text-lg font-medium text-primary'>{cart.length}</h2>
+                        <h2 className='text-lg font-medium text-primary'>${(totalPrice * 1000) + 10}</h2>
                     </div>
                 </div>
             </div>
