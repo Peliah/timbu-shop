@@ -23,8 +23,31 @@ export const CartProvider = ({ children }) => {
         });
     };
 
+    const incrementQuantity = (itemId) => {
+        setCart((prevCart) => {
+            return prevCart.map(item =>
+                item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+            );
+        });
+    };
+
+    const decrementQuantity = (itemId) => {
+        setCart((prevCart) => {
+            return prevCart.map(item =>
+                item.id === itemId && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+            );
+        });
+    };
+
+    const removeFromCart = (itemId) => {
+        setCart((prevCart) => prevCart.filter(item => item.id !== itemId));
+    };
+
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    const totalPrice = cart.reduce((total, item) => total + item.quantity * item.price, 0);
+
     return (
-        <CartContext.Provider value={{ cart, addToCart }}>
+        <CartContext.Provider value={{ cart, addToCart, incrementQuantity, decrementQuantity, removeFromCart, totalItems, totalPrice }}>
             {children}
         </CartContext.Provider>
     );
