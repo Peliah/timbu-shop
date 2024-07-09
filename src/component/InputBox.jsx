@@ -5,19 +5,19 @@ const InputBox = ({ name, type, id, value, placeholder, icon }) => {
     const [passwordVisible, setPasswordVisible] = useState(false);
 
     return (
-        <div className='w-3/5'>
+        <div className='w-full'>
             <input
                 name={name}
                 type={type == "password" ? passwordVisible ? "text" : "password" : "text"}
                 id={id}
                 value={value}
                 placeholder={placeholder}
-                className='border rounded-lg border-primary w-full py-3 '
+                className='border rounded-lg border-primary w-full py-3 pl-6 '
 
             />
-            {/* <span >
+            <span >
                 {icon}
-            </span> */}
+            </span>
             {/* {
                 type == "password" ?
                     <span

@@ -95,7 +95,7 @@ const Cart = () => {
         <div className='w-full flex gap-8 md:pt-8 pt-4 lg:flex-nowrap flex-wrap'>
           <div className='w-full flex flex-col  gap-4 self-end'>
             <label>If you have a promotion code, please enter it here</label>
-            <div className='flex w-full'>
+            <div className='flex lg:w-2/4 w-full'>
               <InputBox />
               <button className='text-secondary bg-primary md:px-6 px-2 rounded-lg text-nowrap'>Apply Discount</button>
             </div>
