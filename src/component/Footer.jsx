@@ -87,7 +87,7 @@ const Footer = () => {
         //     </div>
         // </div>
 
-        <div className='w-full bg-primary px-36 text-secondary font-Montserrat '>
+        <div className='w-full bg-primary lg:px-36 px-10 text-secondary font-Montserrat md:block hidden'>
             <div className='flex justify-between  w-full py-10'>
                 <div className='flex flex-col w-1/3  gap-2'>
                     <h1 className='font-medium text-2xl'>Contacts</h1>

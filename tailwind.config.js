@@ -9,6 +9,10 @@ export default {
       scrollPadding: {
         'left-4': '1rem', // Adjust the value as needed
       },
+      screens: {
+        'xs': {'min': '320px', 'max': '639px'},
+       
+      },
     },
     colors: {
       'primary': '#254D4D',

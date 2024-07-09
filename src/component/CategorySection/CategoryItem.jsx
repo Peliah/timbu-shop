@@ -1,30 +1,6 @@
-// import React from 'react';
-
-// const CategoryItem = ({ image, name, description, price }) => {
-//     return (
-//         <div className="rounded-md shadow-xl font-Montserrat">
-//             <div className="w-full h-96 overflow-hidden rounded-md">
-//                 <img src={image} alt={name} className="w-full h-full object-cover" />
-//             </div>
-//             <div className="px-4 pt-4">
-//                 <h2 className="text-lg font-medium">{name}</h2>
-//                 <h3 className="text-sm font-normal">{description}</h3>
-//                 <h4 className='text-base font-medium pt-3'>${price},000</h4>
-//             </div>
-//             <div className="flex justify-between p-4">
-//                 <button className="px-3 py-1 bg-tetiary text-secondary rounded-lg text-sm font-medium">Add to cart</button>
-//                 <button className="px-3 py-1 bg-primary text-secondary rounded-lg text-sm font-medium">View</button>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default CategoryItem;
-
-
 import React from 'react';
 import { useCart } from '../../hooks/CartContext/CartProvider';
-
+import trolley from '../../assets/images/trolley.png'
 const CategoryItem = ({ id, image, name, description, price }) => {
     const { addToCart } = useCart();
 
@@ -33,21 +9,22 @@ const CategoryItem = ({ id, image, name, description, price }) => {
     };
 
     return (
-        <div className="rounded-md shadow-xl font-Montserrat">
-            <div className="w-full h-96 overflow-hidden rounded-md">
+        <div className="rounded-md shadow-xl font-Montserrat flex flex-col">
+            <div className="w-full md:h-96 h-36 overflow-hidden rounded-md">
                 <img src={image} alt={name} className="w-full h-full object-cover" />
             </div>
             <div className="px-4 pt-4">
-                <h2 className="text-lg font-medium">{name}</h2>
+                <h2 className="md:text-lg text-base font-medium">{name}</h2>
                 <h3 className="text-sm font-normal">{description}</h3>
                 <h4 className='text-base font-medium pt-3'>${price},000</h4>
             </div>
-            <div className="flex justify-between p-4">
+            <div className="flex justify-between p-4 mt-auto">
                 <button
                     className="px-3 py-1 bg-tetiary text-secondary rounded-lg text-sm font-medium"
                     onClick={handleAddToCart}
                 >
-                    Add to cart
+                    <div className='md:block hidden'>Add to cart</div>
+                    <img className='md:hidden block w-4' src={trolley} />
                 </button>
                 <button className="px-3 py-1 bg-primary text-secondary rounded-lg text-sm font-medium">View</button>
             </div>

@@ -5,7 +5,7 @@ const InputBox = ({ name, type, id, value, placeholder, icon }) => {
     const [passwordVisible, setPasswordVisible] = useState(false);
 
     return (
-        <div className='w-3/5'>
+        <div className='w-full'>
             <input
                 name={name}
                 type={type == "password" ? passwordVisible ? "text" : "password" : "text"}

@@ -7,7 +7,7 @@ const HomePage = () => {
     return (
         <>
             <Heroe />
-            <div className='px-36'>
+            <div className='lg:px-36 sm:px-10 px-4'>
                 <Category />
             </div>
             <Footer />

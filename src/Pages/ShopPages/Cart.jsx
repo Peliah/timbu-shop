@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
   const { cart } = useCart();
   return (
-    <div className='min-h-screen pt-20 px-36 font-Montserrat flex flex-col'>
+    <div className='min-h-screen pt-20 lg:px-36 md:px-10 px-3 font-Montserrat flex flex-col'>
       <div className='pb-20 relative'>
         <h2 className='font-semibold text-2xl pt-6'>
           My Shopping Cart
         </h2>
-        <div>
+        <div className='sm:block hidden'>
           <table className="w-full border-separate text-left  border-spacing-y-6">
             <thead>
               <tr>
@@ -49,9 +49,32 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
+
+        {
+          cart.map((item) => (
+            <div className='flex w-full p-2 shadow-md rounded-lg gap-3 justify-between sm:hidden'>
+              <div>
+                <img src={item.image} alt={item.name} className="h-32 w-32 object-cover rounded-md" />
+              </div>
+              <div className='flex flex-col'>
+                <div>{item.description}</div>
+                <h4>${item.price},000</h4>
+                <div className='flex gap-6 mt-auto'>
+                  <div>{item.colour ? item.colour : "N/A"}</div>
+                  <div className='flex '>
+                    <button className='bg-primary rounded-l-md  px-1'><PlusIcon color='#fff' /></button>
+                    <h4 className=' px-1'>{item.quantity}</h4>
+                    <button className=' bg-secondary rounded-r-md  px-1'> <MinusIcon color='#254D4D' /></button>
+                  </div>
+                </div>
+              </div>
+              <button className="bg-red-500 text-white p-2 rounded border h-fit border-primary"><Cross1Icon /></button>
+            </div>
+          ))
+        }
       </div>
       <div className='pb-10 flex flex-col gap-6 w-full mt-auto'>
-        <div className=' w-[55%] flex flex-row justify-between'>
+        <div className=' md:w-[55%] w-full flex flex-row gap-6 md:flex-nowrap flex-wrap '>
           <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
             <h4 className='font-normal text-base opacity-85'>Items</h4>
             <p className='font-normal text-base'>{cart.length}</p>
@@ -69,12 +92,12 @@ const Cart = () => {
             <p className='font-normal text-base'>{cart.length}</p>
           </div>
         </div>
-        <div className='w-[55%] flex gap-8 pt-8 '>
+        <div className='lg:w-[55%] w-full flex gap-8 md:pt-8 pt-4 lg:flex-nowrap flex-wrap'>
           <div className='w-full flex flex-col  gap-4 self-end'>
             <label>If you have a promotion code, please enter it here</label>
             <div className='flex w-full'>
               <InputBox />
-              <button className='text-secondary bg-primary px-6 py-3 rounded-lg'>Apply Discount</button>
+              <button className='text-secondary bg-primary md:px-6 px-3 py-3 rounded-lg text-nowrap'>Apply Discount</button>
             </div>
           </div>
           <div className='self-end flex gap-4'>

@@ -5,7 +5,7 @@ import arrow from "../../assets/images/right-arrow-white.png"
 
 const Heroe = () => {
     return (
-        <div className='w-full min-h-screen bg-secondary bg-gradient-to-r from-primary from-60% to-secondary to-40% md:flex sm:hidden flex-row items-center justify-between px-36'>
+        <div className='w-full min-h-screen bg-secondary bg-gradient-to-r from-primary from-60% to-secondary to-40% lg:flex hidden flex-row items-center justify-between md:px-36 px-10 '>
             <div className='flex flex-col w-1/4 gap-10 text-secondary justify-end '>
                 <h1 className='font-Montserrat text-6xl font-bold'>
                     Furniture that speaks your personality
