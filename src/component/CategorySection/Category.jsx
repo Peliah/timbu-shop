@@ -12,9 +12,9 @@ const Category = () => {
         <div className='w-full py-20 bg-background font-Montserrat flex flex-col'>
             <div className='pb-20'>
                 <h1 className='font-medium text-center text-2xl pb-8'>Category</h1>
-                <ul className='w-full flex items-center justify-center gap-6 flex-row'>
+                <ul className='w-full flex items-center lg:justify-center md:justify-start gap-6 flex-row flex-nowrap overflow-x-scroll no-scrollbar'>
                     {categories.map((category, index) => (
-                        <li className='px-6 py-2 border rounded-full border-primary' key={index}>{category}</li>
+                        <li className='px-6 py-2 border rounded-full border-primary text-nowrap ' key={index}>{category}</li>
                     ))}
                 </ul>
             </div>

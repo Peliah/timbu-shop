@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      scrollPadding: {
+        'left-4': '1rem', // Adjust the value as needed
+      },
+    },
     colors: {
       'primary': '#254D4D',
       'secondary': '#EEF9F1',

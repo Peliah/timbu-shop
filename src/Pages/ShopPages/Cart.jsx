@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
   const { cart } = useCart();
   return (
-    <div className='min-h-screen pt-20 px-36 font-Montserrat '>
+    <div className='min-h-screen pt-20 px-36 font-Montserrat flex flex-col'>
       <div className='pb-20 relative'>
         <h2 className='font-semibold text-2xl pt-6'>
           My Shopping Cart
@@ -49,37 +49,37 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div className='pb-10 flex flex-col gap-6 w-full'>
-          <div className=' w-[55%] flex flex-row justify-between'>
-            <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
-              <h4 className='font-normal text-base opacity-85'>Items</h4>
-              <p className='font-normal text-base'>{cart.length}</p>
-            </div>
-            <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
-              <h4 className='font-normal text-base opacity-85'>Discount</h4>
-              <p className='font-normal text-base'>{cart.length}</p>
-            </div>
-            <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
-              <h4 className='font-normal text-base opacity-85'>Subtotal</h4>
-              <p className='font-normal text-base'>{cart.length}</p>
-            </div>
-            <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
-              <h4 className='font-normal text-base opacity-85'>Total</h4>
-              <p className='font-normal text-base'>{cart.length}</p>
+      </div>
+      <div className='pb-10 flex flex-col gap-6 w-full mt-auto'>
+        <div className=' w-[55%] flex flex-row justify-between'>
+          <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+            <h4 className='font-normal text-base opacity-85'>Items</h4>
+            <p className='font-normal text-base'>{cart.length}</p>
+          </div>
+          <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+            <h4 className='font-normal text-base opacity-85'>Discount</h4>
+            <p className='font-normal text-base'>{cart.length}</p>
+          </div>
+          <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+            <h4 className='font-normal text-base opacity-85'>Subtotal</h4>
+            <p className='font-normal text-base'>{cart.length}</p>
+          </div>
+          <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+            <h4 className='font-normal text-base opacity-85'>Total</h4>
+            <p className='font-normal text-base'>{cart.length}</p>
+          </div>
+        </div>
+        <div className='w-[55%] flex gap-8 pt-8 '>
+          <div className='w-full flex flex-col  gap-4 self-end'>
+            <label>If you have a promotion code, please enter it here</label>
+            <div className='flex w-full'>
+              <InputBox />
+              <button className='text-secondary bg-primary px-6 py-3 rounded-lg'>Apply Discount</button>
             </div>
           </div>
-          <div className='w-[55%] flex gap-8 pt-8 '>
-            <div className='w-full flex flex-col  gap-4 self-end'>
-              <label>If you have a promotion code, please enter it here</label>
-              <div className='flex w-full'>
-                <InputBox />
-                <button className='text-secondary bg-primary px-6 py-3 rounded-lg'>Apply Discount</button>
-              </div>
-            </div>
-            <div className='self-end flex gap-4'>
-              <button className='px-6 py-2 text-secondary bg-primary rounded-lg'><Link to={'/checkout'}>Checkout</Link></button>
-              <button className='bg-primary rounded-lg p-6'></button>
-            </div>
+          <div className='self-end flex gap-4'>
+            <button className='px-6 py-2 text-secondary bg-primary rounded-lg'><Link to={'/checkout'}>Checkout</Link></button>
+            <button className='bg-primary rounded-lg p-6'></button>
           </div>
         </div>
       </div>
