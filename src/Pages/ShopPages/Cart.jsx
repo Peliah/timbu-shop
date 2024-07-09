@@ -35,14 +35,14 @@ const Cart = () => {
                   <td className="py-2 px-4">{item.colour ? item.colour : "N/A"}</td>
                   <td className="py-2 px-4">
                     <div className='flex '>
-                      <button className='bg-primary rounded-l-md px-3 p-2' onClick={() => incrementQuantity(item.id)}><PlusIcon color='#fff' /></button>
+                      <button className='bg-primary rounded-l-md px-3 p-2 hover:scale-110' onClick={() => incrementQuantity(item.id)}><PlusIcon color='#fff' /></button>
                       <h4 className='px-3 p-2'>{item.quantity}</h4>
-                      <button className=' bg-secondary rounded-r-md px-3 p-2' onClick={() => decrementQuantity(item.id)}> <MinusIcon color='#254D4D' /></button>
+                      <button className=' bg-secondary rounded-r-md px-3 p-2 hover:scale-110' onClick={() => decrementQuantity(item.id)}> <MinusIcon color='#254D4D' /></button>
                     </div>
                   </td>
                   <td className="py-2 px-4">${item.price},000</td>
                   <td className="py-2 px-4">
-                    <button className="bg-red-500 text-white p-2 rounded border border-primary" onClick={() => removeFromCart(item.id)}><Cross1Icon /></button>
+                    <button className="bg-red-500 text-white p-2 rounded border border-primary hover:scale-110" onClick={() => removeFromCart(item.id)}><Cross1Icon /></button>
                   </td>
                 </tr>
               ))}
@@ -62,13 +62,13 @@ const Cart = () => {
                 <div className='flex gap-6 mt-auto'>
                   <div>{item.colour ? item.colour : "N/A"}</div>
                   <div className='flex '>
-                    <button className='bg-primary rounded-l-md  px-1'><PlusIcon color='#fff' /></button>
+                    <button className='bg-primary rounded-l-md  px-1 hover:scale-110'><PlusIcon color='#fff' /></button>
                     <h4 className=' px-1'>{item.quantity}</h4>
-                    <button className=' bg-secondary rounded-r-md  px-1'> <MinusIcon color='#254D4D' /></button>
+                    <button className=' bg-secondary rounded-r-md  px-1 hover:scale-110'> <MinusIcon color='#254D4D' /></button>
                   </div>
                 </div>
               </div>
-              <button className="bg-red-500 text-white p-2 rounded border h-fit border-primary"><Cross1Icon /></button>
+              <button className="bg-red-500 text-white p-2 rounded border h-fit border-primary hover:scale-110"><Cross1Icon /></button>
             </div>
           ))
         }
@@ -97,12 +97,12 @@ const Cart = () => {
             <label>If you have a promotion code, please enter it here</label>
             <div className='flex lg:w-2/4 w-full'>
               <InputBox />
-              <button className='text-secondary bg-primary md:px-6 px-2 rounded-lg text-nowrap'>Apply Discount</button>
+              <button className='text-secondary bg-primary md:px-6 px-2 rounded-lg text-nowrap hover:scale-110'>Apply Discount</button>
             </div>
           </div>
           <div className='self-end flex gap-2'>
-            <button className='px-6 py-2 text-secondary bg-primary rounded-lg'><Link to={'/checkout'}>Checkout</Link></button>
-            <button className='bg-primary rounded-lg p-3'><img src={trolley} /></button>
+            <button className='px-6 py-2 text-secondary bg-primary rounded-lg hover:scale-110'><Link to={'/checkout'}>Checkout</Link></button>
+            <button className='bg-primary rounded-lg p-3 hover:scale-110'><img src={trolley} /></button>
           </div>
         </div>
       </div>

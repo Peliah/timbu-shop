@@ -13,7 +13,7 @@ const Heroe = () => {
                 <p className='font-Montserrat font-normal text-2xl'>
                     Discover the embodiment of your unique style today
                 </p>
-                <button className='bg-secondary text-nowrap  w-fit flex px-2 py-3 items-center font-Montserrat font-semibold lg:text-xl text-lg text-primary rounded-xl gap-4 '>
+                <button className='bg-secondary text-nowrap  w-fit flex px-2 py-3 items-center font-Montserrat font-semibold lg:text-xl text-lg text-primary rounded-xl gap-4 hover:scale-110'>
                     Explore Now
                     <div className='bg-primary rounded-lg px-2  w-full'><img cl src={arrow} /></div>
                 </button>

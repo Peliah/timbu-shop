@@ -13,16 +13,16 @@ export const BottomNav = () => {
     const location = useLocation()
     return (
         <div className='flex w-full bg-secondary mt-10 p-6 items-center justify-between font-Montserrat text-primary md:hidden fixed bottom-0 '>
-            <Link to={'/'}>
+            <Link to={'/'} className='hover:scale-110'>
                 <img src={location.pathname === '/' ? homeDark : homeLight} />
             </Link>
-            <Link to={'/cart'}>
+            <Link to={'/cart'} className='hover:scale-110'>
                 <img src={location.pathname === '/cart' ? trolleyDark : trolleyLight} />
             </Link>
-            <Link to={'/'}>
+            <Link to={'/'} className='hover:scale-110'>
                 <img src={location.pathname === '/order' ? emailDark : emailLight} />
             </Link>
-            <Link to={'/'}>
+            <Link to={'/'} className='hover:scale-110'>
                 <img src={location.pathname === '/profile' ? avatarDark : avatarLight} />
             </Link>
             {/* <p>Order</p> */}

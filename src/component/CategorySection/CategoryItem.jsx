@@ -20,13 +20,13 @@ const CategoryItem = ({ id, image, name, description, price }) => {
             </div>
             <div className="flex justify-between p-4 mt-auto">
                 <button
-                    className="px-3 py-1 bg-tetiary text-secondary rounded-lg text-sm font-medium"
+                    className="px-3 py-1 bg-tetiary text-secondary rounded-lg text-sm font-medium hover:scale-110"
                     onClick={handleAddToCart}
                 >
                     <div className='md:block hidden'>Add to cart</div>
                     <img className='md:hidden block w-4' src={trolley} />
                 </button>
-                <button className="px-3 py-1 bg-primary text-secondary rounded-lg text-sm font-medium">View</button>
+                <button className="px-3 py-1 bg-primary text-secondary rounded-lg text-sm font-medium hover:scale-110">View</button>
             </div>
         </div>
     );
