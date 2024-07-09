@@ -14,14 +14,15 @@ const App = () => {
     <BrowserRouter>
       <AuthProvider>
         <CartProvider>
-          <Navbar />
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/checkout' element={<Checkout />} />
-            <Route path='/payment-successful' element={<SuccessfulPay />} />
-          </Routes>
-          <BottomNav />
+            <Routes>
+          <Route path='/' element={<Navbar />}>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/checkout' element={<Checkout />} />
+              <Route path='/payment-successful' element={<SuccessfulPay />} />
+          </Route>
+            </Routes>
+            <BottomNav />
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>

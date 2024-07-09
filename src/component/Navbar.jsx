@@ -51,7 +51,7 @@
 
 import { Cross1Icon, PersonIcon, RowsIcon } from '@radix-ui/react-icons';
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import cartImg from '../assets/images/mynaui_cart.png';
 
 const Navbar = () => {
@@ -81,6 +81,8 @@ const Navbar = () => {
     }, [location.pathname]);
 
     return (
+        <div>
+
         <nav className={`w-full flex items-center justify-between h-20 ${bgColor} lg:bg-transparent z-[999] fixed left-0 font-Montserrat`}>
             <div className='w-full flex flex-row items-center justify-between h-10 lg:px-36 sm:px-10 px-4'>
                 <figcaption className={`text-3xl capitalize ${location.pathname === '/' && bgColor === 'bg-transparent' ? 'lg:text-secondary text-primary' : 'text-primary'}`}>
@@ -100,6 +102,8 @@ const Navbar = () => {
                 <p className='hidden lg:block'><PersonIcon /></p>
             </div>
         </nav>
+        <Outlet/>
+        </div>
     );
 };
 
