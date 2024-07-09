@@ -7,6 +7,7 @@ import Cart from './Pages/ShopPages/Cart'
 import { CartProvider } from './hooks/CartContext/CartProvider'
 import Checkout from './Pages/ShopPages/checkout/Checkout'
 import SuccessfulPay from './Pages/ShopPages/checkout/SuccessfulPay'
+import { BottomNav } from './component/BottomNav'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/payment-successful' element={<SuccessfulPay />} />
           </Routes>
+          <BottomNav />
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>
