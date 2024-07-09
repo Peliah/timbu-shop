@@ -101,8 +101,7 @@ const Footer = () => {
                     <div className='flex flex-col gap-10 pt-6'>
 
                         <ul className='flex flex-row justify-between font-light text-base w-96'>
-                            <li>Home</li>
-                            <li>Specials</li>
+                            <li>Listings</li>
                             <li>About</li>
                             <li>Contact</li>
                         </ul>
