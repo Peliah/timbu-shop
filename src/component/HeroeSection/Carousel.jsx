@@ -29,7 +29,7 @@ const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 300
                 </figure>
 
             </div>
-            <div className='absolute top-[110%] right-1/2 left-0  flex justify-evenly items-center w-full'>
+            <div className='absolute top-[110%] right-10  flex justify-evenly items-center w-10/12'>
                 {/* <button onClick={prev}>prev</button> */}
                 <div onClick={prev} className='cursor-pointer'><img src={arrowleft} /></div>
                 {slides.map((_, i) => (

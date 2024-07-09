@@ -83,9 +83,10 @@ const Navbar = () => {
     return (
         <div>
 
-        <nav className={`w-full flex items-center justify-between h-20 ${bgColor} lg:bg-transparent z-[999] fixed left-0 font-Montserrat`}>
+        <nav className={`w-full flex items-center justify-between h-20 ${bgColor} z-[999] fixed left-0 font-Montserrat`}>
+        {/* <nav className={`w-full flex items-center justify-between h-20 ${bgColor} lg:bg-transparent z-[999] fixed left-0 font-Montserrat`}> */}
             <div className='w-full flex flex-row items-center justify-between h-10 lg:px-36 sm:px-10 px-4'>
-                <figcaption className={`text-3xl capitalize ${location.pathname === '/' && bgColor === 'bg-transparent' ? 'lg:text-secondary text-primary' : 'text-primary'}`}>
+                <figcaption className={`text-3xl capitalize ${location.pathname === '/' && bgColor === 'bg-transparent' ? ' md:text-secondary text-primary' : 'text-primary'}`}>
                     Elegant Furnitures
                 </figcaption>
                 <div className="md:hidden">
@@ -94,7 +95,7 @@ const Navbar = () => {
                     </button>
                 </div>
                 <ul className={`flex flex-col md:flex-row md:gap-10 md:items-center ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
-                    <li><Link to={'/'}>Home</Link></li>
+                    <li><Link to={'/'}>Listings</Link></li>
                     <li><Link to={'/about'}>About Us</Link></li>
                     <li>Contact</li>
                     <li><Link to={'/cart'}><img src={cartImg} alt="Cart" /></Link></li>
