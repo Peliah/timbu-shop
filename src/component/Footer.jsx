@@ -89,7 +89,7 @@ const Footer = () => {
 
         <div className='w-full bg-primary lg:px-36 px-10 text-secondary font-Montserrat md:block hidden'>
             <div className='flex justify-between  w-full py-10'>
-                <div className='flex flex-col w-1/3  gap-2'>
+                <div className='flex flex-col w-1/3  gap-2' id='contact'>
                     <h1 className='font-medium text-2xl'>Contacts</h1>
                     <p className='font-thin text-base '>For your orders contact us on</p>
                     <p className='font-thin text-base pt-4'>elegantfurnitures@gmail.com</p>
@@ -101,9 +101,9 @@ const Footer = () => {
                     <div className='flex flex-col gap-10 pt-6'>
 
                         <ul className='flex flex-row justify-between font-light text-base w-96'>
-                            <li>Listings</li>
-                            <li>About</li>
-                            <li>Contact</li>
+                            <li><a href='#listings'>Listings</a></li>
+                            <li><a href='#about'>About us</a></li>
+                            <li><a href='#contact'>Contact</a></li>
                         </ul>
                         <ul className='flex flex-row justify-evenly font-light text-base w-96'>
                             <li>
@@ -124,7 +124,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='w-1/3 flex justify-end'>
+                <div className='w-1/3 flex justify-end' id='about'>
                     <div className='flex flex-col w-72 gap-4 font-light'>
                         <h1 className=' font-medium text-2xl'>Our Office</h1>
                         <p className=' font-normal text-base '>Visit us at any of our offices</p>
