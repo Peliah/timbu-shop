@@ -4,7 +4,7 @@ import Payment from './Payment'
 
 const Checkout = () => {
     return (
-        <div className='py-40 xl:px-36 lg:px-24 sm:px-10 px-4 font-Montserrat min-h-screen flex flex-col'>
+        <div className='py-40 xl:px-36 lg:px-24 md:px-10 px-4 font-Montserrat min-h-screen flex flex-col'>
         {/* <div className='py-40 flex md:flex-row flex-col w-full gap-20 justify-between xl:px-36 lg:px-24 sm:px-10 px-4 font-Montserrat min-h-fit'> */}
             <div className='flex md:flex-row flex-col w-full gap-20 justify-between h-full'>
                 <div className='md:border-r border-none md:border-primary w-full h-full'>
