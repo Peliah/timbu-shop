@@ -33,7 +33,7 @@ const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 300
                 {/* <button onClick={prev}>prev</button> */}
                 <div onClick={prev} className='cursor-pointer'><img src={arrowleft} /></div>
                 {slides.map((_, i) => (
-                    <h2 key={i}>{i + 1}</h2>
+                    <h2 key={i} className={`${current === i ? 'font-semibold text-xl' : ''} text-primary`}>{i + 1}</h2>
                 ))}
                 <div onClick={next} className='cursor-pointer'><img src={arrowright} /></div>
                 {/* <button onClick={next}>next</button> */}

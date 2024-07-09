@@ -16,7 +16,7 @@ const CategoryItem = ({ id, image, name, description, price }) => {
     };
 
     return (
-        <div className="rounded-md shadow-xl font-Montserrat flex flex-col hover:scale-105 relative">
+        <div className="rounded-md shadow-xl font-Montserrat flex flex-col  relative">
             <div className="w-full md:h-96 h-36 overflow-hidden rounded-md">
                 <img src={image} alt={name} className="w-full h-full object-cover " />
             </div>
