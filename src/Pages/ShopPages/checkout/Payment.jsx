@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import InputBox from '../../../component/InputBox'
 import { countryOptions } from '../../../data/Countries'
-import { useCart } from '../../../hooks/CartContext/CartProvider';
+import useCartStore from '../../../hooks/CartContext/CartProvider';
 import frame from '../../../assets/images/Frame 985.png'
 import { useNavigate } from 'react-router-dom';
 const Payment = () => {
-    const { cart, totalPrice } = useCart();
+    const { cart, totalPrice } = useCartStore();
     const navigate = useNavigate()
     const [paid, setPaid] = useState(false)
 

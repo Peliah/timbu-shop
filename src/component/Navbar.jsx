@@ -83,9 +83,9 @@ const Navbar = () => {
     return (
         <div>
 
-            <nav className={`w-full flex items-center justify-between h-20 ${bgColor} z-[999] fixed left-0 font-Montserrat`}>
+            <nav className={`w-full flex items-center justify-between h-20 ${bgColor} z-[999] fixed font-Montserrat`}>
                 {/* <nav className={`w-full flex items-center justify-between h-20 ${bgColor} lg:bg-transparent z-[999] fixed left-0 font-Montserrat`}> */}
-                <div className='w-full flex flex-row items-center justify-between h-10 lg:px-36 sm:px-10 px-4'>
+                <div className='w-full flex flex-row items-center justify-between h-10  sm:px-10 px-4  max-w-[1440px] mx-auto'>
                     <figcaption className={`text-3xl capitalize ${location.pathname === '/' && bgColor === 'bg-transparent' ? ' md:text-secondary text-primary' : 'text-primary'}`}>
                         Elegant Furnitures
                     </figcaption>

@@ -7,7 +7,7 @@ const HomePage = () => {
     return (
         <>
             <Heroe />
-            <div className='lg:px-36 sm:px-10 px-4'>
+            <div className='max-w-[1440px] mx-auto sm:px-10 px-4 '>
                 <Category />
             </div>
             <Footer />

@@ -1,9 +1,9 @@
 import React from 'react'
-import { useCart } from '../../../hooks/CartContext/CartProvider'
+import useCartStore from '../../../hooks/CartContext/CartProvider'
 import { CaretDownIcon } from '@radix-ui/react-icons';
 
 const Order = () => {
-    const { cart, totalItems, totalPrice } = useCart();
+    const { cart, totalItems, totalPrice } = useCartStore();
     return (
         <div className='w-full'>
             <h2 className='font-semibold text-2xl py-6'>

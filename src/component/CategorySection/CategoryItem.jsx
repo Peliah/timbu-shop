@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useCart } from '../../hooks/CartContext/CartProvider';
+import useCartStore from '../../hooks/CartContext/CartProvider';
 import trolley from '../../assets/images/trolley.png'
 import Toast from '../Toastie';
 const CategoryItem = ({ id, image, name, description, price }) => {
     const [showToast, setShowToast] = useState(false);
-    const { addToCart } = useCart();
+    const addToCart = useCartStore(state => state.addToCart);
+
 
     const handleAddToCart = () => {
         addToCart({ id, image, name, description, price });

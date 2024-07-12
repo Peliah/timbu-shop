@@ -1,14 +1,16 @@
 import React from 'react'
-import { useCart } from '../../hooks/CartContext/CartProvider'
+import useCartStore from '../../hooks/CartContext/CartProvider'
 import InputBox from '../../component/InputBox';
 import { Cross1Icon, MinusIcon, PlusIcon } from '@radix-ui/react-icons';
 import trolley from '../../assets/images/trolley.png'
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  const { cart, removeFromCart, totalItems, totalPrice, decrementQuantity, incrementQuantity } = useCart();
+  const { cart, removeFromCart, totalItems, totalPrice, updateQuantity } = useCartStore();
+  console.log((totalItems()));
+  console.log(totalPrice);
   return (
-    <div className='min-h-screen pt-20 lg:px-36  px-10 font-Montserrat flex flex-col'>
+    <div className='min-h-screen pt-20 max-w-[1440px] sm:px-10 px-4 mx-auto font-Montserrat flex flex-col'>
       <div className='pb-20 relative'>
         <h2 className='font-semibold text-2xl pt-6'>
           My Shopping Cart
@@ -32,15 +34,17 @@ const Cart = () => {
                     <img src={item.image} alt={item.name} className="h-32 w-32 object-cover rounded-md" />
                   </td>
                   <td className="py-2 px-4">{item.description}</td>
-                  <td className="py-2 px-4">{item.colour ? item.colour : "N/A"}</td>
+                  <td className="py-2 px-4">
+                    <div className='rounded-md border p-2 h-fit w-fit'><div className=' p-2 rounded-full bg-primary'></div></div>
+                  </td>
                   <td className="py-2 px-4">
                     <div className='flex '>
-                      <button className='bg-primary rounded-l-md px-3 p-2 hover:scale-110' onClick={() => incrementQuantity(item.id)}><PlusIcon color='#fff' /></button>
+                      <button className='bg-primary rounded-l-md px-3 p-2 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity + 1)}><PlusIcon color='#fff' /></button>
                       <h4 className='px-3 p-2'>{item.quantity}</h4>
-                      <button className=' bg-secondary rounded-r-md px-3 p-2 hover:scale-110' onClick={() => decrementQuantity(item.id)}> <MinusIcon color='#254D4D' /></button>
+                      <button className=' bg-secondary rounded-r-md px-3 p-2 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity - 1)}> <MinusIcon color='#254D4D' /></button>
                     </div>
                   </td>
-                  <td className="py-2 px-4">${item.price},000</td>
+                  <td className="py-2 px-4">${item.price * item.quantity}</td>
                   <td className="py-2 px-4">
                     <button className="bg-red-500 text-white p-2 rounded border border-primary hover:scale-110" onClick={() => removeFromCart(item.id)}><Cross1Icon /></button>
                   </td>
@@ -77,7 +81,7 @@ const Cart = () => {
         <div className=' md:w-[55%] w-full flex flex-row gap-6 md:flex-nowrap flex-wrap '>
           <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
             <h4 className='font-normal text-base opacity-85'>Items</h4>
-            <p className='font-normal text-base'>{totalItems}</p>
+            <p className='font-normal text-base'>{totalItems()}</p>
           </div>
           <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
             <h4 className='font-normal text-base opacity-85'>Discount</h4>
@@ -85,11 +89,11 @@ const Cart = () => {
           </div>
           <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
             <h4 className='font-normal text-base opacity-85'>Subtotal</h4>
-            <p className='font-normal text-base'>${totalPrice * 1000}</p>
+            <p className='font-normal text-base'>${totalPrice()}</p>
           </div>
           <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
             <h4 className='font-normal text-base opacity-85'>Total</h4>
-            <p className='font-normal text-base'>${totalPrice * 1000}</p>
+            <p className='font-normal text-base'>${totalPrice()}</p>
           </div>
         </div>
         <div className='w-full flex gap-8 md:pt-8 pt-4 lg:flex-nowrap flex-wrap'>

@@ -1,54 +1,83 @@
-import React, { createContext, useState, useContext } from 'react';
+// import create from 'zustand';
+// import { persist } from 'zustand/middleware';
 
-const CartContext = createContext();
+// const useCartStore = create(
+//     persist(
+//         (set) => ({
+//             cart: [],
+//             addToCart: (item) => set((state) => {
+//                 const itemIndex = state.cart.findIndex(cartItem => cartItem.id === item.id);
+//                 if (itemIndex > -1) {
+//                     const newCart = [...state.cart];
+//                     newCart[itemIndex].quantity += 1;
+//                     return { cart: newCart };
+//                 }
+//                 return { cart: [...state.cart, { ...item, quantity: 1 }] };
+//             }),
+//             removeFromCart: (itemId) => set((state) => ({
+//                 cart: state.cart.filter(item => item.id !== itemId)
+//             })),
+//             updateQuantity: (itemId, quantity) => set((state) => ({
+//                 cart: state.cart.map(item =>
+//                     item.id === itemId ? { ...item, quantity } : item
+//                 )
+//             })),
+//             clearCart: () => set({ cart: [] }),
+//             totalItems: () => set((state) => state.cart.reduce((acc, item) => acc + item.quantity, 0)),
+//             totalPrice: () => set((state) => state.cart.reduce((acc, item) => acc + (item.price * item.quantity), 0))
+//         }),
+//         {
+//             name: 'cart-storage', // unique name for the localStorage key
+//         }
+//     )
+// );
 
-export const useCart = () => {
-    return useContext(CartContext);
-};
+// export default useCartStore;
 
-export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
 
-    const addToCart = (item) => {
-        setCart((prevCart) => {
-            console.log(item);
-            const itemIndex = prevCart.findIndex(cartItem => cartItem.id === item.id);
-            console.log(itemIndex);
-            if (itemIndex > -1) {
-                const newCart = [...prevCart];
-                newCart[itemIndex].quantity += 1;
-                return newCart;
+import create from 'zustand';
+import { persist } from 'zustand/middleware';
+
+const useCartStore = create(
+    persist(
+        (set, get) => ({
+            cart: [],
+            addToCart: (item) => set((state) => {
+                const itemIndex = state.cart.findIndex(cartItem => cartItem.id === item.id);
+                if (itemIndex > -1) {
+                    const newCart = [...state.cart];
+                    newCart[itemIndex].quantity += 1;
+                    return { cart: newCart };
+                }
+                return { cart: [...state.cart, { ...item, quantity: 1 }] };
+            }),
+            removeFromCart: (itemId) => set((state) => ({
+                cart: state.cart.filter(item => item.id !== itemId)
+            })),
+            // updateQuantity: (itemId, quantity) => set((state) => ({
+            //     cart: state.cart.map(item =>
+            //         item.id === itemId ? { ...item, quantity } : item
+            //     )
+            // })),
+            updateQuantity: (itemId, quantity) => set((state) => ({
+                cart: state.cart.map(item =>
+                    item.id === itemId && quantity >= 1 ? { ...item, quantity } : item
+                )
+            })),
+            clearCart: () => set({ cart: [] }),
+            totalItems: () => {
+                const { cart } = get();
+                return cart.reduce((acc, item) => acc + item.quantity, 0);
+            },
+            totalPrice: () => {
+                const { cart } = get();
+                return cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
             }
-            return [...prevCart, { ...item, quantity: 1 }];
-        });
-    };
+        }),
+        {
+            name: 'cart-storage', // unique name for the localStorage key
+        }
+    )
+);
 
-    const incrementQuantity = (itemId) => {
-        setCart((prevCart) => {
-            return prevCart.map(item =>
-                item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
-            );
-        });
-    };
-
-    const decrementQuantity = (itemId) => {
-        setCart((prevCart) => {
-            return prevCart.map(item =>
-                item.id === itemId && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
-            );
-        });
-    };
-
-    const removeFromCart = (itemId) => {
-        setCart((prevCart) => prevCart.filter(item => item.id !== itemId));
-    };
-
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    const totalPrice = cart.reduce((total, item) => total + item.quantity * item.price, 0);
-
-    return (
-        <CartContext.Provider value={{ cart, addToCart, incrementQuantity, decrementQuantity, removeFromCart, totalItems, totalPrice }}>
-            {children}
-        </CartContext.Provider>
-    );
-};
+export default useCartStore;
