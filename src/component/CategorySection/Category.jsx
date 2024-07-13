@@ -3,6 +3,7 @@ import useFurnitureStore from '../../hooks/useFurniture';
 import CategoryItem from './CategoryItem';
 import Loader from '../Loader';
 import Toast from '../Toastie';
+import { useNavigate } from 'react-router-dom';
 
 const Category = () => {
     const [toastVisible, setToastVisible] = useState(false);
@@ -33,6 +34,10 @@ const Category = () => {
         ? furniture
         : furniture.filter(item => item.categories.some(category => category.name === selectedCategory));
 
+    // const handleItemClick = (id) => {
+    //     navigate(`/product/${id}`);
+    // };
+
     return (
         <div className='w-full py-20 bg-background font-Montserrat flex flex-col min-h-screen' id='listings'>
             {error && <Toast message={error} isVisible={toastVisible} onClose={handleToastClose} />}
@@ -55,7 +60,7 @@ const Category = () => {
                 {filteredFurniture.map(item => (
                     <CategoryItem
                         // key={item.id}
-                        id={item.id}
+                        id={item.unique_id}
                         image={item.photos[0]?.url}
                         name={item.name}
                         description={item.description}

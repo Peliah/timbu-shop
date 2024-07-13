@@ -31,7 +31,7 @@ const Cart = () => {
               {cart.map((item) => (
                 <tr key={item.id} className='shadow-md h-44 rounded-lg'>
                   <td className="py-2 px-4">
-                    <img src={item.image} alt={item.name} className="h-32 w-32 object-cover rounded-md" />
+                    <img src={import.meta.env.VITE_OLD_BASE_URL + '/images/' + item.image} alt={item.name} className="h-32 w-32 object-cover rounded-md" />
                   </td>
                   <td className="py-2 px-4">{item.description}</td>
                   <td className="py-2 px-4">

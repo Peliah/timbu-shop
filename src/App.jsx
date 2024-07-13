@@ -7,6 +7,7 @@ import Cart from './Pages/ShopPages/Cart'
 import Checkout from './Pages/ShopPages/checkout/Checkout'
 import SuccessfulPay from './Pages/ShopPages/checkout/SuccessfulPay'
 import { BottomNav } from './component/BottomNav'
+import ProductPage from './Pages/ShopPages/ProductPage'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path='/' element={<HomePage />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path='/product/:product_id' element={<ProductPage />} />
             <Route path='/payment-successful' element={<SuccessfulPay />} />
           </Route>
         </Routes>
