@@ -70,14 +70,14 @@ const Cart = () => {
                     {/* <button className='bg-primary rounded-l-md  px-1 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity + 1)}><PlusIcon color='#fff' /></button>
                     <h4 className=' px-1'>{item.quantity}</h4>
                     <button className=' bg-secondary rounded-r-md  px-1 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity - 1)}> <MinusIcon color='#254D4D' /></button> */}
-                    <button className='bg-primary rounded-l-md px-3 p-2 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity + 1)}><PlusIcon color='#fff' /></button>
-                      <h4 className='px-3 p-2'>{item.quantity}</h4>
-                      <button className=' bg-secondary rounded-r-md px-3 p-2 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity - 1)}> <MinusIcon color='#254D4D' /></button>
-                    
+                    <button className='bg-primary rounded-l-md  p-2 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity + 1)}><PlusIcon color='#fff' /></button>
+                    <h4 className='px-3 p-2'>{item.quantity}</h4>
+                    <button className=' bg-secondary rounded-r-md  p-2 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity - 1)}> <MinusIcon color='#254D4D' /></button>
+
                   </div>
                 </div>
               </div>
-              <button className="bg-red-500 text-white p-2 rounded border h-fit border-primary hover:scale-110"  onClick={() => removeFromCart(item.id)}><Cross1Icon /></button>
+              <button className="bg-red-500 text-white p-2 rounded border h-fit border-primary hover:scale-110" onClick={() => removeFromCart(item.id)}><Cross1Icon /></button>
             </div>
           ))
         }
