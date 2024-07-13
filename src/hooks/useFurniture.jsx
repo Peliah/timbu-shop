@@ -12,9 +12,9 @@ const useFurnitureStore = create((set) => ({
         set({ loading: true, error: null }); // Set loading to true at the start
         try {
             const response = await Client.get('/products', {
-                params: {
-                    organization_id: import.meta.env.VITE_ORGANISATION_ID,
-                },
+                // params: {
+                //     organization_id: import.meta.env.VITE_ORGANISATION_ID,
+                // },
             });
 
             // const items = response.data.items;

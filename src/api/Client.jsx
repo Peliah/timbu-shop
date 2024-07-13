@@ -1,11 +1,12 @@
 import axios from "axios";
 
 
-const baseURL = import.meta.env.MODE === 'development' ? '/api' : 'https://api.timbu.cloud';
+// const baseURL = import.meta.env.MODE === 'development' ? '/api' : 'https://api.timbu.cloud';
 
 
 export default axios.create({
-    baseURL: baseURL,
+    baseURL: '/api',
+    // baseURL: baseURL,
     // baseURL: import.meta.env.VITE_BASE_URL,
     params: {
         organization_id: import.meta.env.VITE_ORGANISATION_ID,
