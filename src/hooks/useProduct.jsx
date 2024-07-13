@@ -1,9 +1,8 @@
-// // useProduct.js
-// import { useEffect } from 'react';
-// import create from 'zustand';
-// import { ClientProduct } from '../api/Client'; // Your Axios instance
+// import { ClientProduct } from "../api/Client";
 
-import { ClientProduct } from "../api/Client";
+
+// import create from 'zustand';
+// import { Client } from '../api/Client';
 
 // const useProductStore = create((set) => ({
 //     product: null,
@@ -12,42 +11,32 @@ import { ClientProduct } from "../api/Client";
 //     fetchProduct: async (productId) => {
 //         set({ loading: true, error: null });
 //         try {
-//             const response = await ClientProduct.get(`${productId}`, {
-//                 params: {
-//                     organization_id: import.meta.env.VITE_ORGANISATION_ID,
-//                 },
+//             const response = await ClientProduct.get(`${productId}`);
+
+//             const product = response.data;
+
+//             set({
+//                 product: product,
+//                 loading: false,
+//                 error: null,
 //             });
-//             set({ product: response.data, loading: false });
-//         } catch (err) {
-//             set({ error: 'Error fetching product', loading: false });
+//         } catch (error) {
+//             set({
+//                 loading: false,
+//                 error: error.response?.data?.message || error.message,
+//             });
 //         }
 //     },
-//     clearProduct: () => set({ product: null, loading: false, error: null }),
 // }));
 
-// const useProduct = (productId) => {
-//     const { product, loading, error, fetchProduct, clearProduct } = useProductStore();
-
-//     useEffect(() => {
-//         if (productId) {
-//             fetchProduct(productId);
-//         }
-
-//         return () => {
-//             clearProduct();
-//         };
-//     }, [productId, fetchProduct, clearProduct]);
-
-//     return { product, loading, error };
-// };
-
-// export { useProduct, useProductStore };
+// export default useProductStore;
 
 
+import { ClientProduct } from "../api/Client";
 import create from 'zustand';
-import { Client } from '../api/Client';
+import useFurnitureStore from './useFurniture'; // Ensure you have the correct path
 
-const useProductStore = create((set) => ({
+const useProductStore = create((set, get) => ({
     product: null,
     loading: false,
     error: null,
@@ -55,8 +44,18 @@ const useProductStore = create((set) => ({
         set({ loading: true, error: null });
         try {
             const response = await ClientProduct.get(`${productId}`);
-
             const product = response.data;
+
+            // Access the furniture store to get the furniture data
+            const { furniture } = useFurnitureStore.getState();
+
+            // Find the matching furniture item
+            const matchingFurniture = furniture.find(item => item.id === product.id);
+
+            // If matching furniture is found and the product price is null, use the furniture price
+            if (matchingFurniture && !product.price) {
+                product.price = matchingFurniture.current_price[0]?.XAF[0] || null;
+            }
 
             set({
                 product: product,

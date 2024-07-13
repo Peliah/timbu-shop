@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import useProductStore from '../../hooks/useProduct'; // Import your Zustand store
+import useProductStore from '../../hooks/useProduct';
 import Loader from '../../component/Loader';
 import Toast from '../../component/Toastie';
 import arrowleft from '../../assets/images/left-arrow.png'
 import trolley from '../../assets/images/trolley.png'
 import useCartStore from '../../hooks/CartContext/CartProvider';
+import useFurnitureStore from '../../hooks/useFurniture';
 
 const useProduct = (productId) => {
     const { product, loading, error, fetchProduct } = useProductStore();
+    const { fetchFurniture } = useFurnitureStore(); // Fetch furniture data
+
     useEffect(() => {
         if (productId) {
+            fetchFurniture();
             fetchProduct(productId);
         }
-    }, [productId, fetchProduct]);
+    }, [productId, fetchProduct, fetchFurniture]);
 
     return { product, loading, error };
 };
@@ -37,9 +41,18 @@ const ProductPage = () => {
     };
 
     const handleAddToCart = () => {
-        addToCart({ product });
+        // Ensure all necessary product details are included
+        const itemToAdd = {
+            id: product.id,
+            name: product.name,
+            price: product.price || 0, // Fallback to 0 if price is missing
+            quantity: 1,
+            image: product.photos[0]?.url,
+        };
+        addToCart(itemToAdd);
         setToastVisible(true);
     };
+
     return (
         <div className='w-full min-h-screen pt-20 max-w-[1440px] mx-auto font-Montserrat flex flex-col pb-16 px-4 sm:px-10 pb-'>
             {error && <Toast message={error} isVisible={toastVisible} onClose={handleToastClose} />}
@@ -65,7 +78,7 @@ const ProductPage = () => {
                                 <p> This is a {product.name}</p>
                                 <div className='mt-auto'>
                                     <div className='mb-4'>
-                                        <p> ${20000}</p>
+                                        <p> Price: {product.price ? `${product.price}` : 'Price not available'}</p>
                                         <button
                                             className="px-3 py-1 bg-tetiary text-secondary rounded-lg text-sm font-medium hover:scale-110"
                                             onClick={handleAddToCart}
@@ -92,7 +105,6 @@ const ProductPage = () => {
                 )
             )}
             <Toast message="Item added to cart successfully." isVisible={toastVisible} onClose={handleToastClose} />
-
         </div>
     );
 };
