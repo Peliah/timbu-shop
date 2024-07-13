@@ -15,4 +15,15 @@ export default defineConfig({
       },
     },
   },
+  preview: {
+    proxy: {
+      "/api": {
+        target: env.VITE_API_REAL_URL,
+        changeOrigin: true,
+        secure: false,
+        rewrite: (p) => p.replace(/^\/api/, ""),
+      },
+    },
+    cors: false,
+  },
 })
