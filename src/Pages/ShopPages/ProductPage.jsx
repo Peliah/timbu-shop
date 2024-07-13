@@ -52,7 +52,7 @@ const ProductPage = () => {
             ) : (
                 product && (
                     <div className='w-full flex flex-col gap-5 p-2'>
-                        <div className='w-full flex flex-col md:flex-row gap-4'>
+                        <div className='w-full flex flex-col md:flex-row gap-6'>
                             <div className='flex-shrink-0 md:w-1/3'>
                                 <img
                                     src={`${import.meta.env.VITE_OLD_BASE_URL}/images/${product.photos[0]?.url}`}
@@ -60,11 +60,11 @@ const ProductPage = () => {
                                     className='w-full h-auto shadow-lg object-cover'
                                 />
                             </div>
-                            <div className='flex-1 py-6'>
+                            <div className='flex flex-col pt-20'>
                                 <h1 className='font-semibold text-2xl mb-2'>{product.name}</h1>
-                                <div className='mt-4'>
+                                <p> This is a {product.name}</p>
+                                <div className='mt-auto'>
                                     <div className='mb-4'>
-                                        <p> This is a {product.name}</p>
                                         <p> ${20000}</p>
                                         <button
                                             className="px-3 py-1 bg-tetiary text-secondary rounded-lg text-sm font-medium hover:scale-110"
