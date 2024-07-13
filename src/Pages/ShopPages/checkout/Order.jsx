@@ -13,7 +13,7 @@ const Order = () => {
                 {cart.map((item) => (
                     <div className='w-full flex gap-4 p-2 shadow-md rounded-lg mb-4'>
                         <div>
-                            <img src={item.image} alt={item.name} className="h-32 w-32 object-cover rounded-md" />
+                            <img src={import.meta.env.VITE_OLD_BASE_URL + '/images/' + item.image} alt={item.name} className="h-32 w-32 object-cover rounded-md" />
                         </div>
                         <div className='flex justify-between w-full py-2 pr-4'>
                             <div className='flex flex-col gap-4'>
