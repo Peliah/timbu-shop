@@ -8,7 +8,8 @@ export default defineConfig({
     cors: false,
     proxy: {
       "/api": {
-        target: "https://api.timbu.cloud",
+        target: import.meta.env.VITE_BASE_URL,
+        // target: "https://api.timbu.cloud",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""),
@@ -18,7 +19,7 @@ export default defineConfig({
   preview: {
     proxy: {
       "/api": {
-        target: env.VITE_API_REAL_URL,
+        target: import.meta.env.VITE_BASE_URL,
         changeOrigin: true,
         secure: false,
         rewrite: (p) => p.replace(/^\/api/, ""),
