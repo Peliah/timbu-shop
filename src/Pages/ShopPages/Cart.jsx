@@ -73,7 +73,7 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-              <button className="bg-red-500 text-white p-2 rounded border h-fit border-primary hover:scale-110"><Cross1Icon /></button>
+              <button className="bg-red-500 text-white p-2 rounded border h-fit border-primary hover:scale-110"  onClick={() => removeFromCart(item.id)}><Cross1Icon /></button>
             </div>
           ))
         }
