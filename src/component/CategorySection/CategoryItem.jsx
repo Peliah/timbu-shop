@@ -15,16 +15,17 @@ const CategoryItem = ({ id, image, name, description, price }) => {
     const closeToast = () => {
         setShowToast(false);
     };
+    console.log(image);
 
     return (
         <div className="rounded-md shadow-xl font-Montserrat flex flex-col  relative">
             <div className="w-full md:h-96 h-36 overflow-hidden rounded-md">
-                <img src={image} alt={name} className="w-full h-full object-cover " />
+                <img src={import.meta.env.VITE_BASE_URL + '/images/' + image} alt={name} className="w-full h-full object-cover " />
             </div>
             <div className="px-4 pt-4">
                 <h2 className="md:text-lg text-base font-medium">{name}</h2>
                 <h3 className="text-sm font-normal">{description}</h3>
-                <h4 className='text-base font-medium pt-3'>${price},000</h4>
+                <h4 className='text-base font-medium pt-3'>${price}</h4>
             </div>
             <div className="flex justify-between p-4 mt-auto">
                 <button

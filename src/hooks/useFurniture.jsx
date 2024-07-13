@@ -1,15 +1,15 @@
-// useFurnitureStore.js
 import create from 'zustand';
 import Client from '../api/Client';
-
-// const ORGANIZATION_ID = import.meta.env.VITE_ORGANIZATION_ID;
 
 const useFurnitureStore = create((set) => ({
     furniture: [],
     categories: [],
     selectedCategory: 'All',
+    loading: false, // Add loading state
+    error: null, // Add error state
     setSelectedCategory: (category) => set({ selectedCategory: category }),
     fetchFurniture: async () => {
+        set({ loading: true, error: null }); // Set loading to true at the start
         try {
             const response = await Client.get('/products', {
                 params: {
@@ -23,8 +23,14 @@ const useFurnitureStore = create((set) => ({
             set({
                 furniture: items,
                 categories: categories,
+                loading: false, // Set loading to false when data is fetched
+                error: null, // Clear any previous errors
             });
         } catch (error) {
+            set({
+                loading: false,
+                error: error.response?.data?.message || error.message
+            }); // Set loading to false and save the error
             console.error('Error fetching furniture:', error);
         }
     },
