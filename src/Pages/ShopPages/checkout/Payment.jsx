@@ -21,10 +21,6 @@ const Payment = () => {
         }
     }, [paid, navigate])
 
-    // const handlePayment = () => {
-    //     // Simulate payment process
-    //     setPaid(true);
-    // };
 
     const handlePayment = async () => {
         try {
