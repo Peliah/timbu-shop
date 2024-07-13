@@ -157,7 +157,7 @@ const Category = () => {
                 <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 border border-primary rounded-full bg-primary text-white disabled:bg-gray-300"
+                    className="px-4 py-2 border border-primary rounded-lg bg-primary text-secondary"
                 >
                     Previous
                 </button>
@@ -167,7 +167,7 @@ const Category = () => {
                 <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 border border-primary rounded-full bg-primary text-white disabled:bg-gray-300"
+                    className="px-4 py-2 border border-primary rounded-lg bg-primary text-secondary"
                 >
                     Next
                 </button>
