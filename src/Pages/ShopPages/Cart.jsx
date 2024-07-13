@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, removeFromCart, totalItems, totalPrice, updateQuantity } = useCartStore();
-  console.log((totalItems()));
+  console.log(cart);
   console.log(totalPrice);
   return (
     <div className='min-h-screen pt-20 max-w-[1440px] sm:px-10 px-4 mx-auto font-Montserrat flex flex-col'>
@@ -62,13 +62,14 @@ const Cart = () => {
               </div>
               <div className='flex flex-col'>
                 <div>{item.description}</div>
-                <h4>${item.price},000</h4>
+                <h4>${item.price}</h4>
                 <div className='flex gap-6 mt-auto'>
-                  <div>{item.colour ? item.colour : "N/A"}</div>
+                  <div className='rounded-md border p-2 h-fit w-fit'><div className=' p-2 rounded-full bg-primary'></div></div>
+
                   <div className='flex '>
-                    <button className='bg-primary rounded-l-md  px-1 hover:scale-110'><PlusIcon color='#fff' /></button>
+                    <button className='bg-primary rounded-l-md  px-1 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity + 1)}><PlusIcon color='#fff' /></button>
                     <h4 className=' px-1'>{item.quantity}</h4>
-                    <button className=' bg-secondary rounded-r-md  px-1 hover:scale-110'> <MinusIcon color='#254D4D' /></button>
+                    <button className=' bg-secondary rounded-r-md  px-1 hover:scale-110' onClick={() => updateQuantity(item.id, item.quantity - 1)}> <MinusIcon color='#254D4D' /></button>
                   </div>
                 </div>
               </div>
