@@ -24,7 +24,7 @@ const Order = () => {
                                 </div>
                                 <h4 className='flex gap-1 text-sm'>Qty {item.quantity} <CaretDownIcon /></h4>
                             </div>
-                            <h4 className='text-primary'>${item.price},000</h4>
+                            <h4 className='text-primary'>${item.price}</h4>
                         </div>
                     </div>
                 ))}
@@ -33,7 +33,7 @@ const Order = () => {
                 <div className='w-[calc(100%-128px)] p-4 '>
                     <div className='flex justify-between items-start border-b pb-2 mb-4'>
                         <h2 className='text-lg font-medium'>Subtotal</h2>
-                        <h2 className='text-lg font-medium  text-primary'>${totalPrice * 1000}</h2>
+                        <h2 className='text-lg font-medium  text-primary'>${totalPrice()}</h2>
                     </div>
                     <div className='flex justify-between items-start border-b pb-6 mb-4 opacity-55'>
                         <div>
@@ -45,7 +45,7 @@ const Order = () => {
                     </div>
                     <div className='flex justify-between items-start mt-4 py-2 mb-4'>
                         <h2 className='text-lg font-medium'>Subtotal</h2>
-                        <h2 className='text-lg font-medium text-primary'>${(totalPrice * 1000) + 10}</h2>
+                        <h2 className='text-lg font-medium text-primary'>${totalPrice() + 10}</h2>
                     </div>
                 </div>
             </div>

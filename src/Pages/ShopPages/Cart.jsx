@@ -1,20 +1,24 @@
 import React from 'react'
 import useCartStore from '../../hooks/CartContext/CartProvider'
 import InputBox from '../../component/InputBox';
-import { Cross1Icon, MinusIcon, PlusIcon } from '@radix-ui/react-icons';
+import { Cross1Icon, MinusIcon, PlusIcon, TrashIcon } from '@radix-ui/react-icons';
 import trolley from '../../assets/images/trolley.png'
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  const { cart, removeFromCart, totalItems, totalPrice, updateQuantity } = useCartStore();
+  const { cart, removeFromCart, totalItems, totalPrice, updateQuantity, clearCart } = useCartStore();
   console.log(cart);
   console.log(totalPrice);
   return (
     <div className='min-h-screen pt-20 max-w-[1440px] sm:px-10 px-4 mx-auto font-Montserrat flex flex-col'>
       <div className='pb-20 relative'>
-        <h2 className='font-semibold text-2xl pt-6'>
-          My Shopping Cart
-        </h2>
+        <div className='flex w-full items-center justify-between pt-6 '>
+          <h2 className='font-semibold text-2xl'>
+            My Shopping Cart
+          </h2>
+          <button onClick={clearCart} className='bg-[#C70000] p-2  rounded-md '><TrashIcon color='#fff' width={25} height={25} /></button>
+
+        </div>
         <div className='sm:block hidden'>
           <table className="w-full border-separate text-left  border-spacing-y-6">
             <thead>
@@ -56,7 +60,7 @@ const Cart = () => {
 
         {
           cart.map((item) => (
-            <div className='flex w-full p-2 shadow-md rounded-lg gap-3 justify-between sm:hidden'>
+            <div className='flex w-full p-2 shadow-md rounded-lg gap-3 justify-between sm:hidden pt-10'>
               <div>
                 <img src={item.image} alt={item.name} className="h-32 w-32 object-cover rounded-md" />
               </div>

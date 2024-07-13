@@ -85,7 +85,7 @@ const Payment = () => {
 
             <div className='flex justify-between mt-10 gap-8'>
                 <button className='rounded-lg w-[30%] border text-primary  p-3 hover:scale-110' onClick={() => { navigate(-1) }}>Back</button>
-                <button className='rounded-lg w-[65%] text-secondary bg-primary p-3 hover:scale-110' onClick={handlePayment}>Pay ${totalPrice * 1000 + 10}</button>
+                <button className='rounded-lg w-[65%] text-secondary bg-primary p-3 hover:scale-110' onClick={handlePayment}>Pay ${totalPrice() + 10}</button>
             </div>
 
             {paid && (
