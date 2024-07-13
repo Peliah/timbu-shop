@@ -17,8 +17,25 @@ const useFurnitureStore = create((set) => ({
                 },
             });
 
-            const items = response.data.items;
-            const categories = ['All', ...new Set(items.flatMap(item => item.categories.map(category => category.name)))];
+            // const items = response.data.items;
+            // const categories = ['All', ...new Set(items.flatMap(item => item.categories.map(category => category.name)))];
+
+            console.log('Response data:', response.data); // Log the response data
+
+            if (response.data && Array.isArray(response.data.items)) {
+                const items = response.data.items;
+                const categories = ['All', ...new Set(
+                    items.map(item => item.categories.map(category => category.name))
+                        .reduce((acc, categoryArray) => acc.concat(categoryArray), [])
+                )];
+
+                set({
+                    furniture: items,
+                    categories: categories,
+                });
+            } else {
+                throw new Error('Invalid response structure');
+            }
 
             set({
                 furniture: items,
