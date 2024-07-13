@@ -10,7 +10,7 @@ const Cart = () => {
   console.log(cart);
   console.log(totalPrice);
   return (
-    <div className='min-h-screen pt-20 max-w-[1440px] sm:px-10 px-4 mx-auto font-Montserrat flex flex-col'>
+    <div className='min-h-screen pt-20 max-w-[1440px] sm:px-10 px-4 mx-auto font-Montserrat flex flex-col pb-10'>
       <div className='pb-20 relative'>
         <div className='flex w-full items-center justify-between pt-6 '>
           <h2 className='font-semibold text-2xl'>
@@ -88,19 +88,19 @@ const Cart = () => {
       </div>
       <div className='pb-10 flex flex-col gap-6 w-full mt-auto'>
         <div className=' md:w-[55%] w-full flex flex-row gap-6 md:flex-nowrap flex-wrap '>
-          <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+          <div className='border rounded-md border-primary sm:px-6 px-4 py-2 flex sm:gap-6 gap-3'>
             <h4 className='font-normal text-base opacity-85'>Items</h4>
             <p className='font-normal text-base'>{totalItems()}</p>
           </div>
-          <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+          <div className='border rounded-md border-primary sm:px-6 px-4 py-2 flex sm:gap-6 gap-3'>
             <h4 className='font-normal text-base opacity-85'>Discount</h4>
             <p className='font-normal text-base opacity-40'>$0.00</p>
           </div>
-          <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+          <div className='border rounded-md border-primary sm:px-6 px-4 py-2 flex sm:gap-6 gap-3'>
             <h4 className='font-normal text-base opacity-85'>Subtotal</h4>
             <p className='font-normal text-base'>${totalPrice()}</p>
           </div>
-          <div className='border rounded-md border-primary px-6 py-2 flex gap-6'>
+          <div className='border rounded-md border-primary sm:px-6 px-4 py-2 flex sm:gap-6 gap-3'>
             <h4 className='font-normal text-base opacity-85'>Total</h4>
             <p className='font-normal text-base'>${totalPrice()}</p>
           </div>
