@@ -62,7 +62,7 @@ const Cart = () => {
           cart.map((item) => (
             <div className='flex w-full p-2 shadow-md rounded-lg gap-3 justify-between sm:hidden pt-10'>
               <div>
-                <img src={item.image} alt={item.name} className="h-32 w-32 object-cover rounded-md" />
+                <img src={import.meta.env.VITE_OLD_BASE_URL + '/images/' + item.image} alt={item.name} className="h-32 w-32 object-cover rounded-md" />
               </div>
               <div className='flex flex-col'>
                 <div>{item.description}</div>
