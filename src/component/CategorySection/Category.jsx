@@ -153,7 +153,7 @@ const Category = () => {
                     />
                 ))}
             </div>
-            <div className="flex justify-center gap-4 mt-8">
+            <div className="flex justify-center items-center gap-4 mt-8">
                 <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}

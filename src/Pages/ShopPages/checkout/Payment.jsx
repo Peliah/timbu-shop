@@ -6,7 +6,7 @@ import frame from '../../../assets/images/Frame 985.png'
 import { useNavigate } from 'react-router-dom';
 import Loader from '../../../component/Loader';
 const Payment = () => {
-    const { cart, totalPrice } = useCartStore();
+    const { cart, totalPrice, checkout } = useCartStore();
     const navigate = useNavigate()
     const [paid, setPaid] = useState(false)
 
@@ -21,10 +21,32 @@ const Payment = () => {
         }
     }, [paid, navigate])
 
-    const handlePayment = () => {
-        // Simulate payment process
-        setPaid(true);
+    // const handlePayment = () => {
+    //     // Simulate payment process
+    //     setPaid(true);
+    // };
+
+    const handlePayment = async () => {
+        try {
+            const result = await checkout(customerInfo);
+            setPaid(true);
+
+            console.log('Checkout result:', result);
+            // Handle success (e.g., show confirmation message)
+        } catch (error) {
+            console.error('Checkout error:', error);
+            // Handle error (e.g., show error message)
+        }
     };
+
+    const [customerInfo, setCustomerInfo] = useState({
+        customer_title: "Mr",
+        first_name: "Matthew",
+        last_name: "James",
+        email: "Matthewjames@email.com",
+        phone: 865378490,
+        country_code: "+237"
+    });
 
     return (
         <div className='w-full'>

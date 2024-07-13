@@ -19,3 +19,12 @@ export const ClientProduct = axios.create({
         Apikey: import.meta.env.VITE_API_KEY,
     },
 })
+
+export const sales = axios.create({
+    baseURL: 'https://cors-anywhere.herokuapp.com/' + import.meta.env.VITE_SALES_URL,
+    params: {
+        organization_id: import.meta.env.VITE_ORGANISATION_ID,
+        Appid: import.meta.env.VITE_APP_ID,
+        Apikey: import.meta.env.VITE_API_KEY,
+    },
+})

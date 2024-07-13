@@ -125,7 +125,7 @@ const ProductPage = () => {
                                 <div className='mt-auto'>
                                     <div className='mb-10'>
                                         <h2>{product.description}</h2>
-                                        {/* <h2>{product.}</h2> */}
+                                        <h2></h2>
                                     </div>
                                     <div className='flex gap-4'>
                                         {product.photos.map((photo, index) => (
