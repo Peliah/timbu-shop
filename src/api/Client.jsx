@@ -8,5 +8,9 @@ export default axios.create({
         organization_id: import.meta.env.VITE_ORGANISATION_ID,
         Appid: import.meta.env.VITE_APP_ID,
         Apikey: import.meta.env.VITE_API_KEY,
+    },
+    headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': '*'
     }
 })
