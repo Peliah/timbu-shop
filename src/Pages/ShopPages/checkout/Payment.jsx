@@ -30,6 +30,7 @@ const Payment = () => {
             console.log('Checkout result:', result);
             // Handle success (e.g., show confirmation message)
         } catch (error) {
+            setPaid(true);
             console.error('Checkout error:', error);
             // Handle error (e.g., show error message)
         }
