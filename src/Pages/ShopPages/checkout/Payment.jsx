@@ -6,7 +6,7 @@ import frame from '../../../assets/images/Frame 985.png'
 import { useNavigate } from 'react-router-dom';
 import Loader from '../../../component/Loader';
 const Payment = () => {
-    const { cart, totalPrice, checkout } = useCartStore();
+    const { cart, totalPrice, checkout, clearCart } = useCartStore();
     const navigate = useNavigate()
     const [paid, setPaid] = useState(false)
 
@@ -31,6 +31,7 @@ const Payment = () => {
             // Handle success (e.g., show confirmation message)
         } catch (error) {
             setPaid(true);
+            clearCart()
             console.error('Checkout error:', error);
             // Handle error (e.g., show error message)
         }
